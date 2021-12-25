@@ -1,0 +1,74 @@
+[
+  {
+    "category": "дом",
+    "name": "комфорт 1",
+    "image": "products_img/product-1.jpg",
+    "short_desc": "комфортный стул",
+    "description": "подходит для просмотра фильмов.",
+    "price": "2989.5",
+    "quantity": "17"
+  },
+  {
+    "category": "дом",
+    "name": "комфорт 2",
+    "image": "products_img/product-2.jpg",
+    "short_desc": "очень комфортный стул",
+    "description": "подходит для общения с друзьями.",
+    "price": "3687.2",
+    "quantity": "21"
+  },
+  {
+    "category": "дом",
+    "name": "люкс",
+    "image": "products_img/product-3.jpg",
+    "short_desc": "использованы премиальные материалы",
+    "description": "для тех, кто стремится к лучшему.",
+    "price": "8157.99",
+    "quantity": "7"
+  },
+  {
+    "category": "офис",
+    "name": "стандарт",
+    "image": "products_img/product-4.jpg",
+    "short_desc": "универсальное решение",
+    "description": "подходит для любого офиса",
+    "price": "1895.25",
+    "quantity": "27"
+  },
+  {
+    "category": "офис",
+    "name": "премиум",
+    "image": "products_img/product-11.jpg",
+    "short_desc": "улучшенный дизайн",
+    "description": "идеально впишется в строгий интерьер офиса.",
+    "price": "3587.41",
+    "quantity": "14"
+  },
+  {
+    "category": "модерн",
+    "name": "новинка",
+    "image": "products_img/product-21.jpg",
+    "short_desc": "инновационный дизайн",
+    "description": "нестандартное решение для современного интерьера.",
+    "price": "5361.47",
+    "quantity": "18"
+  },
+  {
+    "category": "модерн",
+    "name": "прогресс",
+    "image": "products_img/product-31.jpg",
+    "short_desc": "прогрессивный дизайн",
+    "description": "стильное решение для современного интерьера.",
+    "price": "12875.11",
+    "quantity": "4"
+  },
+  {
+    "category": "классика",
+    "name": "классика",
+    "image": "products_img/product-41.jpg",
+    "short_desc": "классический дизайн",
+    "description": "стандартное решение для вашего дома.",
+    "price": "1256.22",
+    "quantity": "6"
+  }
+]
