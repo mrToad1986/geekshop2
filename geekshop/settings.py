@@ -38,6 +38,8 @@ INSTALLED_APPS = [
 
     'mainapp',
     'authapp',
+    #'adminapp', - доделать
+    #'basketapp' - доделать
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
+                #'mainapp.context_processors.basket'
             ],
         },
     },
@@ -127,3 +130,34 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authapp.ShopUser'
+
+LOGIN_URL = '/auth/login'
+
+BASE_URL = 'http://localhost:8000'
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'django@gb.local'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_SSL = False
+
+#запись писем в файл
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#EMAIL_FILE_PATH = 'tmp/'
+
+#встроенный smtp сервер
+EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
+
+
+#для отправки с реального ящика
+#EMAIL_HOST = 'smtp.yandex.ru'
+#EMAIL_PORT = 465
+#EMAIL_HOST_USER = '...@yandex.ru' #ящик
+#EMAIL_HOST_PASSWORD = 'password' #пароль
+#EMAIL_USE_SSL = True
+
+#для отправки через mailtrap.io
+#EMAIL_HOST = 'smtp.mailtrap.io'
+#EMAIL_HOST_USER = '195f23f691c97c'
+#EMAIL_HOST_PASSWORD = 'c49332654a466b'
+#EMAIL_PORT = '2525'
