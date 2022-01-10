@@ -1,9 +1,10 @@
 from django import forms
+from django.forms import HiddenInput, ModelForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 import random
 import hashlib
 from datetime import datetime
-from authapp.models import ShopUser
+from authapp.models import ShopUser, ShopUserProfile
 
 
 class ShopUserLoginForm(AuthenticationForm):
@@ -60,6 +61,17 @@ class ShopUserEditForm(UserChangeForm):
         if data_age < 18:
             raise forms.ValidationError('Ваш возраст слишком маленький.')
         return data_age
+
+class ShopUserProfileForm(ModelForm):
+
+    class Meta:
+        model = ShopUserProfile
+        fields = ('tagline', 'about_me', 'gender')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
     # username = forms.CharField(widget=forms.TextInput(attrs={
     #     'class': 'form-control py-4', 'placeholder': 'Введите имя пользователя'}))
