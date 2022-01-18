@@ -1,0 +1,4 @@
+{
+  "SOCIAL_AUTH_VK_OAUTH2_KEY": "xxxxxx",
+  "SOCIAL_AUTH_VK_OAUTH2_SECRET": "xxxxxxxxxxxxxx"
+}

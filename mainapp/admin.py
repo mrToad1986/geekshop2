@@ -3,7 +3,7 @@ from authapp.models import ShopUser
 from django.contrib.auth.admin import UserAdmin
 from mainapp.models import Product, ProductCategory
 
-# admin.site.register(Product)
+#admin.site.register(Product)
 admin.site.register(ProductCategory)
 # admin.site.register(ShopUser)
 

@@ -9,7 +9,7 @@
         <br>
         <input class="form-control" type="submit" value="войти"><br>
         <a class="btn btn-primary form-control" href="{% url 'authapp:register' %}">Регистрация</a>
-
     </form>
-
+    <br>
+    <a class="btn btn-primary form-control" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">Вход через VK</a>
 {% endblock %}
