@@ -10,7 +10,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         return
     base_url = 'http://api.vk.com/method/users.get'
 
-    fields_for_request = ['bdate', 'sex', 'about', 'langs']
+    fields_for_request = ['bdate', 'sex', 'about', 'langs', 'photo_max_orig']
     params = {
         'fields': ','.join(fields_for_request),
         'access_token': response['access_token'],
@@ -35,8 +35,8 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         user.shopuserprofile.about_me = api_data['about']
 
     if 'bdata' in api_data:
-        bdata = datetime.striptime(api_data['bdate'], "%d.%m.%Y").date()
-        age = datetime.now().year - bdate.year
+        bdata = datetime.strptime(api_data['bdate'], "%d.%m.%Y").date()
+        age = datetime.now().year - bdata.year
         #if age < 100:
         if age < 18:
             user.delete()
@@ -44,7 +44,16 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         user.age = age
 
     if 'langs' in api_data:
-        user.shopuserprofile.lang = api_data['langs']
+        print(api_data['langs'])
+
+    if 'photo_max_orig' in api_data:
+        #user.avatar = api_data['photo_max_orig']
+        avatar_url = api_data['photo_max_orig']
+        avatar_response = requests.get(avatar_url)
+        avatar_path = f'{settings.MEDIA_ROOT}/users/{user.pk}.jpg'
+        with open(avatar_path, 'wb') as avatar_file:
+            avatar_file.write(avatar_response.content)
+        user.avatar = f'users/{user.pk}.jpg'
 
     user.save()
 
