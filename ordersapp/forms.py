@@ -16,6 +16,7 @@ class OrderForm(forms.ModelForm):
 
 
 class OrderItemForm(forms.ModelForm):
+    price = forms.CharField(label='Цена', )
 
     class Meta:
         model = OrderItem
