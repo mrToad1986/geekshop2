@@ -1,8 +1,4 @@
-.idea
 .env
-vk.json
 db.sqlite3
-__pycache__/
-__pycache__
-media
 venv
+*/__pycache__/
